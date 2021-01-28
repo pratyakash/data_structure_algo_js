@@ -69,6 +69,23 @@ class Singly_Linked_List {
 
         return current_head;
     }
+
+    unshift(val) {
+        const new_node = new Node(val)
+
+        if (!this.head) {
+            this.head = new_node;
+            this.tail = new_node;
+        }
+        else {
+            new_node.next = this.head;
+
+            this.head = new_node;
+            this.length++;
+        }
+    
+        return this;
+    }
 }
 
 
@@ -77,5 +94,3 @@ const list = new Singly_Linked_List()
 list.push('Hello')
 list.push('Goodbye')
 list.push('!')
-
-console.log(list.pop())
