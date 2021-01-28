@@ -69,6 +69,50 @@ class Singly_Linked_List {
 
         return current_head;
     }
+
+    unshift(val) {
+        const new_node = new Node(val)
+
+        if (!this.head) {
+            this.head = new_node;
+            this.tail = new_node;
+        }
+        else {
+            new_node.next = this.head;
+
+            this.head = new_node;
+        }
+
+        this.length++;
+    
+        return this;
+    }
+
+    get(index) {
+        if (index < 0 || index > this.length) return null;
+
+        let counter = 0;
+        let current_node = this.head;
+
+        while(counter !== index) {
+            current_node = current_node.next;
+            counter++;
+        } 
+
+        return current_node;
+    }
+
+    set(val, index) {
+        const found_node = this.get(index);
+
+        if (found_node) {
+            found_node.val = val;
+            
+            return true;
+        }
+
+        return false;
+    }
 }
 
 
@@ -77,5 +121,3 @@ const list = new Singly_Linked_List()
 list.push('Hello')
 list.push('Goodbye')
 list.push('!')
-
-console.log(list.pop())
