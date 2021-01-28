@@ -81,10 +81,37 @@ class Singly_Linked_List {
             new_node.next = this.head;
 
             this.head = new_node;
-            this.length++;
         }
+
+        this.length++;
     
         return this;
+    }
+
+    get(index) {
+        if (index < 0 || index > this.length) return null;
+
+        let counter = 0;
+        let current_node = this.head;
+
+        while(counter !== index) {
+            current_node = current_node.next;
+            counter++;
+        } 
+
+        return current_node;
+    }
+
+    set(val, index) {
+        const found_node = this.get(index);
+
+        if (found_node) {
+            found_node.val = val;
+            
+            return true;
+        }
+
+        return false;
     }
 }
 
