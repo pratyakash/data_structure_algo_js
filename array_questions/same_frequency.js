@@ -23,6 +23,8 @@ const same_freqency = (num1, num2) => {
     return true;
 };
 
+/* Time Complexity O(n) */
+
 // const is_same = same_freqency(123,341);
 // const is_same = same_freqency(3589578,5879385);
 // const is_same = same_freqency(123,341);

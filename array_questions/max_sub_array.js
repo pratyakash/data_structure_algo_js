@@ -30,4 +30,4 @@ const max_sub_array = (arr, n) => {
     return max_sum;
 };
 
-max_sub_array ( [ 1,2,5,2,8,1,5 ] , 2 )
+max_sub_array ([1,2,5,2,8,1,5], 2 )
